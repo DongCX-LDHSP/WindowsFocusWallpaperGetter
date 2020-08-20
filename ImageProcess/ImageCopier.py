@@ -1,9 +1,11 @@
 import shutil
-from FilenameManager.RecordLine import RecordLine
-from FilenameManager.FilenameManager import *
 from os import rename, listdir, path, mkdir, remove
-from ImageProcess.ImageAnalyser import *
 from datetime import datetime
+
+from FilenameManager.RecordLine import RecordLine
+from FilenameManager.FilenameManager import FilenameManager
+from ImageProcess.ImageAnalyser import ImageAnalyser
+from Enumerations import ImageLayout
 
 
 class ImageCopier:

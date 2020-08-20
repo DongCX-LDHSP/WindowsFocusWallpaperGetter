@@ -1,8 +1,7 @@
 from FilenameManager.FilenameManager import FilenameManager
 from FilenameManager.RecordLine import RecordLine
+from Enumerations import ImageLayout
 
-# todo 枚举变量抽离
-from ImageAnalyser import ImageLayout
 import pymysql
 
 

@@ -1,10 +1,9 @@
-from FilenameManager.FilenameManager import FilenameManager
-from FilenameManager.RecordLine import RecordLine
-
-# todo 枚举变量抽离
-from ImageAnalyser import ImageLayout
 import re
 import os
+
+from FilenameManager.FilenameManager import FilenameManager
+from FilenameManager.RecordLine import RecordLine
+from Enumerations import ImageLayout
 
 
 class TextFile(FilenameManager):

@@ -1,5 +1,4 @@
-# todo 枚举变量抽离
-from ImageAnalyser import ImageLayout
+from Enumerations import ImageLayout
 from datetime import datetime
 
 

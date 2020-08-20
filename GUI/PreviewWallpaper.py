@@ -1,10 +1,10 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+
 import os
 
-# todo 枚举变量抽离
-from ImageAnalyser import ImageLayout
+from Enumerations import ImageLayout
 
 
 class PreviewWallpaper(QWidget):

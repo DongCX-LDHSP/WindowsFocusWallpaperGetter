@@ -1,5 +1,12 @@
-from GUI.PreviewWallpaper import *
-from Controller import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+
+from GUI.PreviewWallpaper import PreviewWallpaper
+from Controller import Controller
+from Enumerations import ExecuteMessage, SearchMode
+
+from os import path
 
 
 class MyQLabel(QLabel):
@@ -245,7 +252,7 @@ class LookRecord(QWidget):
     def __preview_image(self):
         row = self.sender().get_row()
         imageLayout = self.__recordLines[row].get_layout()
-        filename = os.path.join(self.__storageFolder, imageLayout.name, self.__recordLines[row].get_new_name())
+        filename = path.join(self.__storageFolder, imageLayout.name, self.__recordLines[row].get_new_name())
         preview = PreviewWallpaper(filename, imageLayout)
         self.__previewWindows.append(preview)
         preview.closeSignal.connect(self.__delete_preview_window)

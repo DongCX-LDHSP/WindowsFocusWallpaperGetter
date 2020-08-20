@@ -1,11 +1,12 @@
-from GUI.StorageMethodGUI import *
-from GUI.InitStorageFolder import *
-from GUI.SetStorageFolderDialog import *
-from GUI.LookRecord import LookRecord
-from Controller import *
 import sys
 import platform
 import re
+
+from GUI.StorageMethodGUI import StorageMethodGUI
+from GUI.InitStorageFolder import InitStorageFolderDialog
+from GUI.SetStorageFolderDialog import SetStorageFolderDialog
+from GUI.LookRecord import LookRecord
+from Controller import Controller
 
 
 class MainWindow(QWidget):

@@ -1,9 +1,8 @@
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from Controller import *
 
-# todo 枚举变量抽离
-from SettingsAnalyser import StorageMethod
+from Controller import Controller
+from Enumerations import StorageMethod, ExecuteMessage
 
 
 class StorageMethodGUI(QDialog):

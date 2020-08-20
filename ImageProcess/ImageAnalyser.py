@@ -1,27 +1,5 @@
-from enum import Enum
+from Enumerations import ImageFormat, ImageLayout
 from PIL import Image
-
-
-# todo 枚举变量抽离
-class ImageLayout(Enum):
-    """
-    ImageLayout:图片版式枚举类
-    """
-    horizontal = 0      # 横版图片
-    vertical = 1        # 竖版图片
-    unknown = 2         # 未知版式
-    invalidFile = 3     # 非图片文件
-
-
-class ImageFormat(Enum):
-    """
-    ImageFormat:图片格式枚举类
-    """
-    jpg = 0     # jpg/jpeg格式
-    png = 1
-    gif = 2
-    bmp = 3
-    other = 4
 
 
 class ImageAnalyser:

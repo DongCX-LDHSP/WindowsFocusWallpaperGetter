@@ -1,25 +1,7 @@
 import json
 import os
-from enum import Enum
 
-
-# todo 枚举变量抽离
-class ResetMessage(Enum):
-    """
-    ResetMessage:设置更新结果枚举类
-    """
-    success = 0             # 重置成功
-    locationNotExist = 1    # 路径不存在
-    fileNotFound = 2        # settings文件找不到
-
-
-class StorageMethod(Enum):
-    """
-    StorageMethod:存储方式枚举类
-    """
-    textFile = 0
-    database = 1
-    unknown = 2
+from Enumerations import ResetMessage, StorageMethod
 
 
 class SettingsAnalyser:

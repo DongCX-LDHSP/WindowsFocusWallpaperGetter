@@ -1,19 +1,8 @@
-from ImageProcess.ImageCopier import *
-from SettingsAnalyser import *
-from FilenameManager.TextFile import *
-from FilenameManager.Database import *
-from enum import Enum
-
-
-# todo 枚举变量抽离
-class ExecuteMessage(Enum):
-    success = "执行成功"
-    failure = "执行失败"
-
-
-class SearchMode(Enum):
-    idAndNum = 0
-    oldFilename = 1
+from ImageProcess.ImageCopier import ImageCopier
+from SettingsAnalyser import SettingsAnalyser
+from FilenameManager.TextFile import TextFile
+from FilenameManager.Database import Database
+from Enumerations import SearchMode, ExecuteMessage, ResetMessage, StorageMethod
 
 
 class Controller:
