@@ -1,5 +1,5 @@
-from PyQt5.QtCore import pyqtSignal, QSize
-from PyQt5.QtGui import QPixmap, Qt, QImage, QMouseEvent, QCloseEvent
+from PyQt5.QtCore import pyqtSignal, Qt, QSize
+from PyQt5.QtGui import QPixmap, QImage, QMouseEvent, QCloseEvent
 from PyQt5.QtWidgets import QWidget, QMessageBox, QLabel, QVBoxLayout
 
 import os

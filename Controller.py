@@ -2,6 +2,7 @@ from ImageProcess.ImageCopier import ImageCopier
 from SettingsAnalyser import SettingsAnalyser
 from FilenameManager.TextFile import TextFile
 from FilenameManager.Database import Database
+from FilenameManager.FilenameManager import FilenameManager
 from Enumerations import SearchMode, ExecuteMessage, ResetMessage, StorageMethod
 
 
