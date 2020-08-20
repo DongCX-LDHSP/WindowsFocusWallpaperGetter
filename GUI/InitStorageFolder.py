@@ -1,5 +1,5 @@
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtWidgets import QFileDialog, QMessageBox
 
 from Controller import Controller
 

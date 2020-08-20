@@ -1,6 +1,8 @@
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtCore import pyqtSignal, QRegExp
+from PyQt5.QtGui import QFont, QRegExpValidator, Qt, QCloseEvent
+from PyQt5.QtWidgets import QWidget, QMessageBox, QLabel, QCheckBox, QGridLayout
+from PyQt5.QtWidgets import QLineEdit, QRadioButton, QPushButton
+from PyQt5.QtWidgets import QAbstractItemView, QFrame, QHBoxLayout, QTableWidget, QTableWidgetItem
 
 from GUI.PreviewWallpaper import PreviewWallpaper
 from Controller import Controller

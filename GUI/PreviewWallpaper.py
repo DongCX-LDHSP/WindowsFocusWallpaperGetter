@@ -1,6 +1,6 @@
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtCore import pyqtSignal, QSize
+from PyQt5.QtGui import QPixmap, Qt, QImage, QMouseEvent, QCloseEvent
+from PyQt5.QtWidgets import QWidget, QMessageBox, QLabel, QVBoxLayout
 
 import os
 
