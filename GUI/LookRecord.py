@@ -133,11 +133,9 @@ class LookRecord(QWidget):
 
     def __add_item_to_table(self):
         # 清空复选框和预览标签
-        del self.__checkBoxes
-        del self.__labels
-        self.__checkBoxes = list()
-        self.__labels = list()
-        for i in range(len(self.__recordLines)):
+        self.__checkBoxes.clear()
+        self.__labels.clear()
+        for i, recordLine in enumerate(self.__recordLines):
             # 放入操作控件
             selectionCheckBox = MyQCheckBox(i)
             self.__checkBoxes.append(selectionCheckBox)
@@ -149,11 +147,12 @@ class LookRecord(QWidget):
             previewLabel.linkActivated.connect(self.__preview_image)
             previewLabel = self.__set_widget_style(previewLabel)
 
+            # 放入复选框和预览按钮
             self.__table.setCellWidget(i, 0, selectionCheckBox)
             self.__table.setCellWidget(i, 1, previewLabel)
 
             # 放入记录项
-            message = self.__recordLines[i].get_gui_string_tuple()
+            message = recordLine.get_gui_string_tuple()
             for j in range(5):
                 item = QTableWidgetItem(message[j])
                 item.setTextAlignment(Qt.AlignCenter)
