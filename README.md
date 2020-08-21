@@ -1,6 +1,12 @@
 # WindowsFocusWallpaperGetter
 WallpaperGetter的面向对象和GUI版，python大作业的延续
 
+## 所有的仓库地址
+
+1. `Github`：[点此前往](https://github.com/DongCX-LDHSP/WindowsFocusWallpaperGetter)，可在该仓库获取`Release`版本
+2. `Gitee`：[点此前往](https://gitee.com/rikdon/WindowsFocusWallpaperGetter)
+3. `Gitlab`：[点此前往](https://gitlab.com/Rik-Don/windowsfocuswallpapergetter)
+
 ## 问题总结
 
 1. 包内模块引入时，就拿FilenameManager包来说，在TextFile内引入RecordLine可选的方式有两种：第一种引入方式适合引入模块（文件）内所有对象，第二种引入方式则适合模块内只有一个单独的类：
