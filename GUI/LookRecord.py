@@ -131,10 +131,15 @@ class LookRecord(QWidget):
         self.__add_item_to_table()
         self.__set_table_height_width()
 
-    def __add_item_to_table(self):
+    def __add_item_to_table(self, reverse: bool = True):
         # 清空复选框和预览标签
         self.__checkBoxes.clear()
         self.__labels.clear()
+
+        # 展示全部数据时倒序压入数据
+        if reverse is True:
+            self.__recordLines.reverse()
+
         for i, recordLine in enumerate(self.__recordLines):
             # 放入操作控件
             selectionCheckBox = MyQCheckBox(i)
@@ -194,7 +199,7 @@ class LookRecord(QWidget):
         elif self.__idNumRadioButton.isChecked() is True:
             ret = Controller.search_image(keyWord, SearchMode.idAndNum)
         if ret[0] is ExecuteMessage.success:
-            del self.__recordLines
+            self.__recordLines.clear()
             self.__recordLines = ret[1]
             self.__refresh_after_search()
         elif ret[0] is ExecuteMessage.failure:
@@ -203,7 +208,7 @@ class LookRecord(QWidget):
     def __refresh_after_search(self):
         self.__table.clearContents()
         self.__table.setRowCount(len(self.__recordLines))
-        self.__add_item_to_table()
+        self.__add_item_to_table(False)
         self.__set_table_height_width()
 
     def refresh_totally(self, out_call: bool = False):
