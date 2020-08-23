@@ -1,5 +1,5 @@
 from PyQt5.QtCore import pyqtSignal, Qt, QRegExp
-from PyQt5.QtGui import QFont, QRegExpValidator, QCloseEvent
+from PyQt5.QtGui import QFont, QRegExpValidator, QCloseEvent, QMouseEvent
 from PyQt5.QtWidgets import QWidget, QMessageBox, QLabel, QCheckBox, QGridLayout
 from PyQt5.QtWidgets import QLineEdit, QRadioButton, QPushButton
 from PyQt5.QtWidgets import QAbstractItemView, QFrame, QHBoxLayout, QTableWidget, QTableWidgetItem
@@ -12,6 +12,8 @@ from os import path
 
 
 class MyQLabel(QLabel):
+    clicked = pyqtSignal(object)
+
     def __init__(self, row):
         super(MyQLabel, self).__init__()
         self.__row = row
@@ -21,6 +23,10 @@ class MyQLabel(QLabel):
 
     def set_row(self, row):
         self.__row = row
+
+    def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
+        if ev.button() == Qt.LeftButton:
+            self.clicked.emit(self.__row)
 
 
 class MyQCheckBox(QCheckBox):
@@ -149,7 +155,7 @@ class LookRecord(QWidget):
             previewLabel = MyQLabel(i)
             self.__labels.append(previewLabel)
             previewLabel.setText("<a href = '#'>预览</a>")
-            previewLabel.linkActivated.connect(self.__preview_image)
+            previewLabel.clicked.connect(self.__preview_image)
             previewLabel = self.__set_widget_style(previewLabel)
 
             # 放入复选框和预览按钮
@@ -255,8 +261,7 @@ class LookRecord(QWidget):
             self.__checkBoxes[i].set_row(i)
             self.__labels[i].set_row(i)
 
-    def __preview_image(self):
-        row = self.sender().get_row()
+    def __preview_image(self, row: int):
         imageLayout = self.__recordLines[row].get_layout()
         filename = path.join(self.__storageFolder, imageLayout.name, self.__recordLines[row].get_new_name())
         preview = PreviewWallpaper(filename, imageLayout)
